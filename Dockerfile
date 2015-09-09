@@ -6,4 +6,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update &&  DEBIAN_FRONTEND=noninterac
 RUN ln -s /etc/nginx/sites-available/html.conf /etc/nginx/sites-enabled/01_html
 ADD index.html /var/www/html/
 EXPOSE 80
-ENTRYPOINT ["/usr/sbin/nginx"]
+ENTRYPOINT ["/bin/bash"]
