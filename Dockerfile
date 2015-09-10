@@ -4,7 +4,6 @@ ADD html.conf /etc/nginx/sites-available/
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y nginx && mkdir -p /var/www/html && rm -f /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/html.conf /etc/nginx/sites-enabled/01_html
 ADD index.html /var/www/html/
-ENTRYPOINT ["/etc/init.d/nginx"]
-CMD ["start"]
+ENTRYPOINT ["/etc/init.d/nginx","start"]
 EXPOSE 80
 EXPOSE 443
